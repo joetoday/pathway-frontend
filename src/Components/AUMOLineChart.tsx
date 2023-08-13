@@ -21,7 +21,17 @@ ChartJS.register(
     Legend
 );
 
-export const options = {
+interface AUMOLineChartProps{
+  disableChartSubtitle: boolean;
+  hasCardTitle: boolean;
+  subtitle?: string;
+  title?: string;
+  isIncrease?: boolean;
+  changeValue?: string;
+}
+
+const AUMOLineChart: React.FC<AUMOLineChartProps> = ({disableChartSubtitle, hasCardTitle, subtitle, title, isIncrease, changeValue}:AUMOLineChartProps ) => {
+  const options = {
     responsive: true,
     plugins: {
       legend: {
@@ -29,8 +39,8 @@ export const options = {
         
       },
       title: {
-        display: true,
-        text: 'Asset Under Management Overtime',
+        display: disableChartSubtitle,
+        text: subtitle,
         align: 'start' as const,
         font: {
             size: 18,
@@ -66,7 +76,7 @@ export const options = {
   
   const labels = ['1', '5', '10', '15', '20', '25', '30'];
   
-  export const data = {
+  const data = {
     labels,
     datasets: [
       {
@@ -78,9 +88,17 @@ export const options = {
       },
     ],
   };
-
-const AUMOLineChart = () => {
-  return <Line options={options} data={data} />;
+  return (
+    <div>
+      {hasCardTitle && 
+        <div className='chart-card-title'>
+            <div className="sub-title">{subtitle}</div>
+            <div className="title">{title} <span className={isIncrease ? 'positive' : 'negative'}>{changeValue}</span> </div>
+        </div>
+      }
+      <Line options={options} data={data} />;
+    </div>
+  );
 }
 
 export default AUMOLineChart

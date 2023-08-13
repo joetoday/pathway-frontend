@@ -12,20 +12,27 @@ const Vaults = () => {
           <div className="content-wrapper">
             <div className="info-cards">
                 <InfoCard 
+                  rowOf={3}
                   title='Asset Under Management'
                   value='$10,000,000.00'
                 />
                 <InfoCard 
+                  rowOf={3}
                   title='Unique Depositor'
                   value='4,000'
                 />
                 <InfoCard 
+                  rowOf={3}
                   title='Asset Support'
                   value='1,000'
                 />
             </div>
             <div className="asset-chart-section">
-              <AUMOLineChart />
+              <AUMOLineChart 
+                hasCardTitle={false}
+                disableChartSubtitle={true}
+                subtitle='Asset Under Management Overtime'
+              />
             </div>
             <div className="vaults-chart-section">
               <div className="title">Popular Vaults</div>

@@ -13,6 +13,7 @@ import {
 import { Line } from 'react-chartjs-2';
 import { Card } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(
     CategoryScale,
@@ -68,17 +69,18 @@ export const options = {
     price: string;
     isIncrease: boolean;
     changePercent: string;
+    
   }
 
 const VaultChart: React.FC<VaultChartProps> = ({name, aum, price, isIncrease, changePercent}: VaultChartProps) => {
-
+    const navigate = useNavigate();
     const data = {
         labels,
         datasets: [
           {
             label: '',
             data: [10, 30, 13, 20, 17, 43, 12],
-            borderColor: isIncrease ? 'rgb(14, 88, 57)' : 'rgba(229, 62, 62)',
+            borderColor: isIncrease ? 'rgb(14, 88, 57)' : 'rgb(229, 62, 62)',
             backgroundColor: isIncrease ? 'rgba(14, 88, 57, 0.5)' : 'rgba(229, 62, 62, 0.5)',
             fill: true
           },
@@ -86,7 +88,7 @@ const VaultChart: React.FC<VaultChartProps> = ({name, aum, price, isIncrease, ch
       };
 
   return (
-    <Card className='vault-chart-card'>
+    <Card className='vault-chart-card' onClick={() => navigate('/vault-detail')}>
         <Card.Body>
             <div className="chart-title-section">
                 <div className="icon">

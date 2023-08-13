@@ -1,12 +1,15 @@
-// import React, {useState} from 'react';
+import React, {useState} from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import ConnectModal from './ConnectModal';
 
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [modalShow, setModalShow] = useState<boolean>(false);
 
   const isHome: boolean = location.pathname === "/";
 
@@ -34,11 +37,12 @@ const Header = () => {
             <option value="eur">EUR</option>
           </Form.Select>
         </div>
-        <Button variant='primary' className='btn-primary-text'>
+        <Button variant='primary' className='btn-primary-text' onClick={() => setModalShow(true)}>
           <Icon icon="bxs:wallet" className='btn-icon'/> {" "} {!true ? "Disconnect " : "Connect "} Wallet
         </Button>
       </div>
       }
+      <ConnectModal show={modalShow} onHide={() => setModalShow(false)}/>
     </header>
   )
 }
