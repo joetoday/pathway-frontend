@@ -12,14 +12,17 @@ const Summary = () => {
           <div className="content-wrapper">
             <div className="info-cards">
               <InfoCard 
+                rowOf={3}
                 title='Amount Invested'
                 value='$10,000,000.00'
               />
               <InfoCard 
+                rowOf={3}
                 title='No. of Vaults Invested in'
                 value='3'
               />
               <InfoCard 
+                rowOf={3}
                 title='Total Rewards'
                 value='$1,000'
               />
