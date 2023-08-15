@@ -31,6 +31,20 @@ body{
     padding: 0px !important;
 }
 
+.connector-button{
+    padding: 24px;
+    margin-bottom: 24px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid var(--main);
+    font-size: 14px;
+    color: var(--main);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 .btn-icon{
     margin-top: -2px;
 }
@@ -737,6 +751,7 @@ body{
 
 .frame-wrapper .side-nav .side-nav-wrapper .logo{
     margin-bottom: 32px;
+    cursor: pointer;
 }
 
 .frame-wrapper .side-nav .side-nav-wrapper .side-nav-links{
@@ -849,7 +864,38 @@ header .other-header .select-dropdowns .form-select{
     line-height: normal;
 }
 
+header .other-header .dropdown .btn-success{
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 10px;
 
+}
+
+header .other-header .dropdown .btn-success .dropdown-btn-wrapper .con-wallet{
+    color: var(--text-t);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 4px;
+}
+
+header .other-header .dropdown .btn-success .dropdown-btn-wrapper .con-address{
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+header .other-header .dropdown .btn-success::after{
+    color: var(--text-secondary);
+    position: relative;
+    top: 20px;
+}
 
 /* Footer */
 footer{
