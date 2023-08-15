@@ -1,12 +1,13 @@
 import { Icon } from '@iconify/react';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const SideNav = () => {
+  const navigate = useNavigate();
   return (
     <div className='side-nav-wrapper'>
-      <div className="logo">
-        <img src='./assets/images/logo-white.png' alt='pathway finance'/>
+      <div className="logo" onClick={() => navigate("/")}>
+        <img src='./assets/images/logo-white.png' alt='pathway finance' />
       </div>
       <div className="side-nav-links">
         <NavLink

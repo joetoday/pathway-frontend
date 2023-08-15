@@ -751,6 +751,7 @@ body{
 
 .frame-wrapper .side-nav .side-nav-wrapper .logo{
     margin-bottom: 32px;
+    cursor: pointer;
 }
 
 .frame-wrapper .side-nav .side-nav-wrapper .side-nav-links{
