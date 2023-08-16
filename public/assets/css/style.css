@@ -399,6 +399,7 @@ body{
 .blog-card,
 .twitter-card{
     width: 355px !important;
+    margin-bottom: 24px;
 }
 .blog-card .card-body{
     padding: 24px !important;
@@ -911,7 +912,7 @@ footer .footer-wrapper{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 34px;
+    /* gap: 34px; */
     align-self: stretch;
 }
 
@@ -1104,6 +1105,7 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* Other Pages */
@@ -1415,4 +1417,145 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 19.6px */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1100px) {
+    .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text{
+        font-size: 16px;
+    }
+
+    .custom-accordion .accordion-card .card-body .content{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 870px) {
+    .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text{
+        font-size: 14px;
+    }
+
+    .custom-accordion .accordion-card .card-body .content{
+        font-size: 12px;
+    }
+
+    .latest-blog .blog-cards,
+    .latest-tweets .tweet-cards{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+}
+
+@media (max-width: 743px) {
+    footer .footer-wrapper .footer-info .info{
+        font-size: 24px;
+    }
+
+    footer .footer-wrapper .footer-links ul li a {
+        font-size: 14px;
+    }
+
+    footer .footer-wrapper .footer-socials .footer-sub-form .form-label{
+        font-size: 14px;
+    }
+
+    .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px){
+    .latest-blog .header, .latest-tweets .header, .faqs .header,
+    .latest-blog .header, .latest-tweets .header, .faqs .header,
+    .latest-blog .header, .latest-tweets .header, .faqs .header{
+        font-size: 24px;
+    }
+
+    footer .footer-wrapper .footer-socials .footer-sub-form .sub-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    footer .footer-wrapper .footer-socials .footer-sub-form .sub-form input,
+    footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-btn
+    {
+        width: 100%;
+    }
+
+    footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input{
+        margin-bottom: 8px;
+        width: 100%;
+
+    }
+
+    footer .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    footer .footer-wrapper .footer-info,
+    footer .footer-wrapper .footer-links,
+    footer .footer-wrapper .footer-socials{
+        margin-bottom: 16px;
+    }
+
+    footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input input{
+        font-size: 12px;
+    }
+
+    .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .icon-wrapper .iconify {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 463px){
+    header .home-header img{
+        width: 190px;
+    }
+
+    .landing .landing-content .title{
+        font-size: 16px;
+    }
+
+    .landing .landing-content .sub-title {
+        font-size: 24px;
+    }
+
+    .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 407px){
+    .blog-card, .twitter-card{
+        width: 280px !important;
+    }
+
+    .twitter-card .card-body .card-text .user .user-info .name-icon .name {
+        font-size: 16px;
+    }
+
+    .twitter-card .card-body .card-text .user .user-info .handle{
+        font-size: 14px;
+    }
+
+    .twitter-card .card-body .card-text .tweet {
+        font-size: 14px;
+    }
+
+    .twitter-card .card-body .card-text .footer-info .user-timestamp, 
+    .twitter-card .card-body .card-text .footer-info .seperator, 
+    .twitter-card .card-body .card-text .footer-info .device {
+        font-size: 12px;
+    }
+
+    .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text {
+        font-size: 10px;
+    }
 }
