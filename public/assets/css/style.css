@@ -31,6 +31,12 @@ body{
     padding: 0px !important;
 }
 
+@media (min-width: 1405px){
+    .container{
+        max-width: none !important;
+    }
+}
+
 .connector-button{
     padding: 24px;
     margin-bottom: 24px;
@@ -240,6 +246,7 @@ body{
     background: rgba(14, 88, 57, 0.08);
     display: flex;
     flex-direction: row;
+    min-height: 163.8px;
 }
 
 .main-modal .modal-body .sectionReceive .tranxDetail{
@@ -742,25 +749,44 @@ body{
     position: sticky;
     top: 0;
     left: 0;
+
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper{
+.frame-wrapper .side-nav,
+.sliding-side-nav{
+    background: #083321 !important;
+}
+
+.sliding-side-nav{
+    z-index: 1000;
+
+}
+
+.sliding-side-nav .slide-pane__content{
+    padding: 0px !important;
+}
+
+.frame-wrapper .side-nav .side-nav-wrapper,
+.sliding-side-nav .side-nav-wrapper{
     width: 100%;
     padding: 32px 10.3%;
 
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .logo{
+.frame-wrapper .side-nav .side-nav-wrapper .logo,
+.sliding-side-nav .side-nav-wrapper .logo{
     margin-bottom: 32px;
     cursor: pointer;
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links,
+.sliding-side-nav .side-nav-wrapper .side-nav-links{
     display: flex;
     flex-direction: column;
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a,
+.sliding-side-nav .side-nav-wrapper .side-nav-links a{
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -769,7 +795,8 @@ body{
     width: 100%;
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a .icon{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a .icon,
+.sliding-side-nav .side-nav-wrapper .side-nav-links a .icon{
     margin-right: 8px;
     padding: 8px 12px;
     border-radius: 50%;
@@ -777,12 +804,14 @@ body{
     box-shadow: 0px 3.500000238418579px 5.500000476837158px 0px rgba(0, 0, 0, 0.02);
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a .icon .iconify{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a .icon .iconify,
+.sliding-side-nav .side-nav-wrapper .side-nav-links a .icon .iconify{
     font-size: 16px;
     color: var(--main);
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a .link-text{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links a .link-text,
+.sliding-side-nav .side-nav-wrapper .side-nav-links a .link-text{
     color: var(--white);
     font-size: 16px;
     font-style: normal;
@@ -792,21 +821,25 @@ body{
     top: 9px;
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active,
+.sliding-side-nav .side-nav-wrapper .side-nav-links .active{
     border-radius: 8px;
     background: var(--white);
     box-shadow: 0px 3.500000238418579px 5.500000476837158px 0px rgba(0, 0, 0, 0.02);
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active .icon{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active .icon,
+.sliding-side-nav .side-nav-wrapper .side-nav-links .active .icon{
     background: var(--main);
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active .icon .iconify{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active .icon .iconify,
+.sliding-side-nav .side-nav-wrapper .side-nav-links .active .icon .iconify{
     color: var(--white);
 }
 
-.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active .link-text{
+.frame-wrapper .side-nav .side-nav-wrapper .side-nav-links .active .link-text,
+.sliding-side-nav .side-nav-wrapper .side-nav-links .active .link-text{
     color: var(--gray-gray-700);
 }
 
@@ -839,6 +872,14 @@ header .other-header{
     display: flex;
     flex-direction: row;
     justify-content: end;
+}
+
+header .hamburger-section {
+    display: none;
+}
+
+header .hamburger-section .hamburger-wrapper{
+    cursor: pointer;
 }
 
 header .other-header .indicator{
@@ -1120,6 +1161,7 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 24px;
 }
 
@@ -1420,13 +1462,30 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
 }
 
 /* Mobile Responsiveness */
+
 @media (max-width: 1100px) {
+    .container{
+        max-width: none !important;
+    }
+    header .hamburger-section {
+        display: block;
+    }
+    header .hamburger-section .hamburger-wrapper .iconify{
+        font-size: 24px;
+    }
     .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text{
         font-size: 16px;
     }
 
     .custom-accordion .accordion-card .card-body .content{
         font-size: 14px;
+    }
+}
+
+@media (max-width: 982px) {
+    .info-cards .rowOf4{
+        width: 45% !important;
+        margin-bottom: 16px;
     }
 }
 
@@ -1446,7 +1505,31 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
        justify-content: center;
        align-items: center;
     }
+
+    .content-wrapper .vault-table-section{
+        overflow: scroll;
+    }
+
+    .content-wrapper .vault-table-section .table thead tr th {
+        white-space: nowrap;
+    }
 }
+
+@media (max-width: 792px) {
+    .info-cards .rowOf3{
+        width: 45% !important;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 766px) {
+    .vault-chart-card{
+        min-width: 0 !important;
+        width: 100%;
+    }
+}
+
+
 
 @media (max-width: 743px) {
     footer .footer-wrapper .footer-info .info{
@@ -1466,7 +1549,7 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
     }
 }
 
-@media (max-width: 576px){
+@media (max-width: 580px){
     .latest-blog .header, .latest-tweets .header, .faqs .header,
     .latest-blog .header, .latest-tweets .header, .faqs .header,
     .latest-blog .header, .latest-tweets .header, .faqs .header{
@@ -1512,6 +1595,77 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
     .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .icon-wrapper .iconify {
         font-size: 24px;
     }
+
+    .info-cards .rowOf3,
+    .info-cards .rowOf4{
+        width: 100% !important;
+        margin-bottom: 16px;
+    }
+
+    .content-wrapper .investment-summary .title,
+    .content-wrapper .vaults-chart-section .title,
+    .content-wrapper .vault-header .title,
+    .content-wrapper .vault-about .header,
+    .content-wrapper .asset-chart-section .chart-card-title .title  {
+        font-size: 27px;
+    }
+
+    .content-wrapper .vault-about .sub-about .sub-header{
+        font-size: 18px;
+    }
+
+    .content-wrapper .vault-about .sub-about .content,
+    .content-wrapper .vault-table-section .table tbody tr td .table-row-1-icon-text .table-text {
+        font-size: 12px;
+    }
+
+
+    .content-wrapper .vault-header .title .iconify {
+        font-size: 32px;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 496px){
+    .content-wrapper .investment-summary .title,
+    .content-wrapper .vaults-chart-section .title,
+    .content-wrapper .vault-header .title,
+    .content-wrapper .vault-about .header,
+    .content-wrapper .asset-chart-section .chart-card-title .title  {
+        font-size: 23px;
+    }
+
+    .content-wrapper .vault-about .sub-about .sub-header{
+        font-size: 16px;
+    }
+
+    .content-wrapper .vault-about .sub-about .content,
+    .content-wrapper .vault-table-section .table tbody tr td .table-row-1-icon-text .table-text {
+        font-size: 12px;
+    }
+
+
+    .content-wrapper .vault-header .title .iconify {
+        font-size: 28px;
+        margin-right: 12px;
+    }
+
+    .content-wrapper .vault-header .btns button{
+        padding: 5px 12px !important;
+    }
+
+    .content-wrapper .investment-summary .investment-table{
+        overflow: scroll;
+    }
+
+    .content-wrapper .investment-summary .investment-table table thead tr th {
+        white-space: nowrap;
+    }
+
+    .content-wrapper .investment-summary .investment-table table tbody tr .title,
+    .content-wrapper .investment-summary .investment-table table tbody tr td {
+        font-size: 11px;
+    }
 }
 
 @media (max-width: 463px){
@@ -1529,6 +1683,44 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
 
     .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text{
         font-size: 12px;
+    }
+}
+
+@media (max-width: 450px){
+    header .other-header .select-dropdowns {
+        margin-right: 5px;
+    }
+    
+    header .other-header .select-dropdowns .form-select{
+        font-size: 12px;
+    }
+
+    .btn-primary-text{
+        font-size: 12px !important;
+    }
+
+    .content-wrapper .investment-summary .title,
+    .content-wrapper .vaults-chart-section .title,
+    .content-wrapper .vault-header .title,
+    .content-wrapper .vault-about .header,
+    .content-wrapper .asset-chart-section .chart-card-title .title  {
+        font-size: 17px;
+    }
+
+    .content-wrapper .vault-about .sub-about .sub-header,
+    .content-wrapper .vault-table-section .table tbody tr td {
+        font-size: 12px;
+    }
+
+    .content-wrapper .vault-about .sub-about .content,
+    .content-wrapper .vault-table-section .table tbody tr td .table-row-1-icon-text .table-text {
+        font-size: 10px;
+    }
+
+
+    .content-wrapper .vault-header .title .iconify {
+        font-size: 17px;
+        margin-right: 8px;
     }
 }
 
@@ -1557,5 +1749,15 @@ footer .footer-wrapper .footer-socials .footer-sub-form .sub-form .sub-input inp
 
     .custom-accordion .accordion-card .accordion-header-wrapper .accordion-header .accordion-text {
         font-size: 10px;
+    }
+}
+
+@media (max-width: 383px){
+    header .other-header .indicator{
+        display: none;
+    }
+
+    header .other-header .select-dropdowns {
+        display: none;
     }
 }

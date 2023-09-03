@@ -24,7 +24,7 @@ const VaultDetail = () => {
         setModalShow(true)
     }
   return (
-    <Frame title='vault-detail'>
+    <Frame title='Vault Detail'>
         <Container>
             <div className="content-wrapper">
                 <div className="go-back" onClick={() => navigate(-1)}><Icon icon="gg:arrow-left" /> {" "} Back to Vaults</div>

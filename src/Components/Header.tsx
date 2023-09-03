@@ -1,14 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import ConnectModal from './ConnectModal';
 import { useAccount, useDisconnect } from "wagmi";
 
+
 import { getEllipsisTxt } from "../Utils/formatters";
 
+interface HeaderProp{
+  paneState: boolean;
+  setPaneState: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const Header = () => {
+const Header: React.FC<HeaderProp> = ({paneState, setPaneState}: HeaderProp) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { address, connector: isConnected } = useAccount();
@@ -24,6 +29,12 @@ const Header = () => {
     window.location.reload();
   };
 
+  useEffect(() => {
+    if(isConnected){
+      setModalShow(false)
+    }
+  }, [isConnected])
+
   return (
     <header>
       {isHome ?
@@ -32,6 +43,16 @@ const Header = () => {
         <Button variant='primary' className='btn-primary-text' onClick={() => navigate("/vaults")}>Launch App</Button>
       </div>
       :
+      <>
+      <div className="hamburger-section">
+        <div className="hamburger-wrapper" onClick={() => setPaneState(prev => !prev)}>
+          {paneState ?
+          <Icon icon="ph:x-bold" />  
+          :
+          <Icon icon="ci:hamburger-md" />
+          }
+        </div>
+      </div>
       <div className="other-header">
         <div className="indicator">
           <Icon icon="material-symbols:circle" />
@@ -73,6 +94,7 @@ const Header = () => {
           <Icon icon="bxs:wallet" className='btn-icon'/> {" "} {!true ? "Disconnect " : "Connect "} Wallet
         </Button> */}
       </div>
+      </>
       }
       <ConnectModal show={modalShow} onHide={() => setModalShow(false)}/>
     </header>
