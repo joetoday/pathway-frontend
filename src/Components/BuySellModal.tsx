@@ -29,7 +29,7 @@ const BuySellModal = (props: any) => {
         <Modal.Body>
             {props.modalSize === "md" ?
             <>
-                <div className="sectionTranx">
+                <div className="sectionReceive sectionTranx" /* className="sectionTranx" */>
                     <div className="tranxMax">
                         <div className="key">{props.modalType === "Buy" ? "Pay" : props.modalType}</div>
                         <div className="value">
@@ -38,6 +38,7 @@ const BuySellModal = (props: any) => {
                         </div>
                     </div>
                     <div className="tranxDetail">
+                    <div className="t-wrapper t2-wrapper">
                         <div className="tranx-select-form">
                             <InputGroup>
                                 <InputGroup.Text>
@@ -61,6 +62,7 @@ const BuySellModal = (props: any) => {
                         <div className="values">
                             <div className="value">0.001</div>
                             <div className="sub-value">$0.032</div>
+                        </div>
                         </div>
                     </div>
                 </div>
