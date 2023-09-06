@@ -97,7 +97,7 @@ const BuySellModal = (props: any) => {
                                 <div className="sub-value">$0.00312</div>
                             </div>
                         </div>
-                        <div className="summary-bx">
+                        {/* <div className="summary-bx">
                             <div className="detail" onClick={() => setIsOpened(prev => !prev)}>
                                 <div className="text">Total Cost: 0.006323190123</div>
                                 <div className={isOpened ? "opened icon" : "icon"}><Icon icon="bxs:down-arrow" /></div>
@@ -105,7 +105,17 @@ const BuySellModal = (props: any) => {
                             <div className={isOpened ? "open detail" : "detail"}>
                                 <div className="text text-s">Network Fee: 0.0001239013</div>
                             </div>
-                        </div>
+                        </div> */}
+                    </div>
+                    <div className="tranxSummary">
+                        <div className="summary-bx">
+                            <div className="open detail">
+                                <div className="text text-s"><b>Network Fee:</b> 0.0001239013</div>
+                            </div>
+                            <div className="detail">
+                                <div className="text"><b>Total Cost:</b> 0.006323190123</div>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </>    
